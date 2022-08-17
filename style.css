@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Sniglet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Mandali&family=Sniglet&display=swap');
+
+h1 {
+    font-family: 'Coiny', cursive;
+}
+
+h2 {
+    font-family: 'Sniglet', cursive;
+}
+
+p{
+    font-family: 'Mandali', sans-serif;
+}
+
+a{
+    font-family: 'Sniglet', cursive;
+}
