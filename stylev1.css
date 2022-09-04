@@ -1,19 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Sniglet&display=swap');
+/* fonts imported from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Mandali&family=Sniglet&display=swap');
 
+/* main headings */
 h1 {
     font-family: 'Coiny', cursive;
 }
 
+/* h2 headings */
 h2 {
-    font-family: 'Sniglet', cursive;
+    font-family: 'Coiny', cursive;
 }
 
+/*  */
 p{
     font-family: 'Mandali', sans-serif;
 }
 
+/* navigation bar */
 a{
-    font-family: 'Sniglet', cursive;
+    font-family: 'Mandali', sans-serif;
+}
+
+/* formatting of table */
+table {
+    font-family: 'Mandali', sans-serif;
+    color: black;
+}
+
+/*headers of columns */
+th {
+    color: black;
+    font-family: 'Mandali', sans-serif;
+    font-size: 20px;
+}
+
+/*information inside columns*/
+td {
+    font-family: 'Mandali', sans-serif;
+    color: black;
+}
+
+/* background colour */
+body {
+
 }
