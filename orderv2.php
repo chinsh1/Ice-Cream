@@ -82,8 +82,8 @@ $update_orders_record = mysqli_query($con, $update_orders);
 
         <!-- enter Flavour ID -->
         <label for="flavour">Flavour: </label><br>
-        <type="text" id="Flavour" name="Flavour"><br>
-        
+        <input type="text" id="FlavourID" name="FlavourID"><br>
+
         <!-- enter quantity  -->
         <label for="Quantity">Quantity: </label><br>
         <input type="text" id="Quantity" name="Quantity"><br>
@@ -96,7 +96,7 @@ $update_orders_record = mysqli_query($con, $update_orders);
     <h2>Update Order</h2>
     <table>
         <tr>
-            <th>Customer Name</th>
+            <th>Customer ID</th>
             <th>Flavour</th>
             <th>Quantity</th>
         </tr>
