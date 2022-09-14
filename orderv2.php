@@ -6,12 +6,19 @@ include 'connection.php';
 /* Order Query*/
 /* SELECT OrderID, CustomerID FROM orders*/
 
-/* Flavours Query*/
-/* SELECT FlavourID, Name FROM flavours */
-$all_flavours_query = 'SELECT FlavourID, Name, Cost, Stock FROM flavours';
-$all_flavours_result = mysqli_query($con, $all_flavours_query);
-$all_flavours_record = mysqli_fetch_assoc($all_flavours_result);
+/* Default value for page */
+if(isset($_GET['order'])) {
+    $id = $_GET['order'];
+} else {
+    $id = 1;
+}
 
+/* Query the database for a single order */
+$this_order_query = "SELECT CustomerID, FlavourID, Quantity  From orders WHERE OrderID = '"  .  $id   .  "'";
+$this_order_result = mysqli_query($con, $this_order_query);
+$this_order_record = mysqli_fetch_assoc($this_order_result);
+
+/* Update orders query */
 $update_orders = "SELECT * FROM orders";
 $update_orders_record = mysqli_query($con, $update_orders);
 ?>
@@ -75,18 +82,8 @@ $update_orders_record = mysqli_query($con, $update_orders);
 
         <!-- enter Flavour ID -->
         <label for="flavour">Flavour: </label><br>
-        <select id="Flavour" name="Flavour">
-            <!--options-->
-            <?php
-            while($all_flavours_record = mysqli_fetch_assoc($all_flavours_result)) {
-                echo "<option value = '". $all_flavours_record['FlavourID'] . "'>";
-                echo $all_flavours_record['Name'];
-                echo "</option>";
-            }
-            ?>
-        </select><br>
-
-
+        <type="text" id="Flavour" name="Flavour"><br>
+        
         <!-- enter quantity  -->
         <label for="Quantity">Quantity: </label><br>
         <input type="text" id="Quantity" name="Quantity"><br>
@@ -99,7 +96,7 @@ $update_orders_record = mysqli_query($con, $update_orders);
     <h2>Update Order</h2>
     <table>
         <tr>
-            <th>Customer ID</th>
+            <th>Customer Name</th>
             <th>Flavour</th>
             <th>Quantity</th>
         </tr>
@@ -117,7 +114,7 @@ $update_orders_record = mysqli_query($con, $update_orders);
             echo "<td><a href=deleteorder.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
             echo"</form></tr>";
         }
-        echo ['OrderID'];
+
         ?>
     </table>
 
