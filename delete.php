@@ -7,7 +7,7 @@ else{
 }
 
 /* Update drink and cost query */
-$delete_order = "DELETE FROM order WHERE OrderID='$_GET[OrderID]'";
+$delete_order = "DELETE FROM orders WHERE OrderID='$_GET[OrderID]'";
 
 /* Check the record has been deleted */
 if(!mysqli_query($con, $delete_order)) {
