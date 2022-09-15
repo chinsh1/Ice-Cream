@@ -94,28 +94,27 @@ $update_orders_record = mysqli_query($con, $update_orders);
     </form>
 
     <h2>Update Order</h2>
+
     <table>
         <tr>
             <th>Customer ID</th>
-            <th>Flavour</th>
+            <th>Flavour ID</th>
             <th>Quantity</th>
         </tr>
         <?php
         while($row = mysqli_fetch_array($update_orders_record))
         {
-            echo "<tr><form action = updateorder.php method = post>";
-            echo "<td><input type=text name='CustomerID' value='" .$row['CustomerID']. "'></td>";
-            echo "<td><input type=text name='FlavourID' value='" .$row['FlavourID']. "'></td>";
-            echo "<td><input type=text name='Quantity' value='" .$row['Quantity']. "'></td>";
-
-            echo "<input type=hidden name=OrderID value='" .$row['OrderID']. "'>";
-            echo "<td><input type=submit></td>";
-
-            echo "<td><a href=deleteorder.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
+            echo"<tr><form action = update.php method = post>";
+            echo"<td><input type=text name=CustomerID value='" .$row['CustomerID']. "'></td>";
+            echo"<td><input type=text name=FlavourID value='" .$row['FlavourID']. "'></td>";
+            echo"<td><input type=text name=Quantity value='" .$row['Quantity']. "'>";
+            echo"<td><input type=hidden name=OrderID value='" .$row['OrderID']. "'></td>";
+            echo"<td><input type = submit></td>";
+            echo"<td><a href=delete.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
             echo"</form></tr>";
         }
-
         ?>
+
     </table>
 
 </main>
