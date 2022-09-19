@@ -30,7 +30,6 @@ AND flavours.FlavourID = orders.FlavourID AND orders.Quantity AND orders.OrderID
 $this_orders_result = mysqli_query($con, $this_orders_query);
 $this_orders_record = mysqli_fetch_assoc($this_orders_result);
 
-
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +42,7 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
 </head>
 
 <div class="grid-container">
-    <div class="grid-items grid-item-1">
+    <div class="grid-item-1">
         <body>
         <header>
             <!-- title of page -->
@@ -54,14 +53,14 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
     <div class="grid-item-2">
         <nav>
             <!-- links to other pages -->
-            <a href="index.php"> home </a>
-            <a href="flavours.php"> flavours </a>
-            <a href="order.php"> order </a>
+            <a href="index.php">HOME</a>
+            <a href="flavours.php">FLAVOURS</a>
+            <a href="order.php">ORDER</a>
         </nav>
     </div>
 
-    <main>
-        <div class="grid-item-5">
+    <div class="grid-item-5">
+        <main>
             <!-- using a form to insert an entry into the database -->
             <h2>Add Customer</h2>
             <form action="insertcustomer.php" method="post">
@@ -83,7 +82,7 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
                 <!-- submit button-->
                 <input type="submit" value="submit">
             </form>
-        </div>
+    </div>
 
         <div class="grid-item-6">
             <h2>Add Order</h2>
@@ -107,30 +106,31 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
             </form>
         </div>
 
+        <div class="grid-item-7">
+            <h2>Update Order</h2>
 
-        <h2>Update Order</h2>
+            <table>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Flavour ID</th>
+                    <th>Quantity</th>
+                </tr>
+                <?php
+                while($row = mysqli_fetch_array($update_orders_record))
+                {
+                    echo"<tr><form action = update.php method = post>";
+                    echo"<td><input type=text name=CustomerID value='" .$row['CustomerID']. "'></td>";
+                    echo"<td><input type=text name=FlavourID value='" .$row['FlavourID']. "'></td>";
+                    echo"<td><input type=text name=Quantity value='" .$row['Quantity']. "'>";
+                    echo"<td><input type=hidden name=OrderID value='" .$row['OrderID']. "'></td>";
+                    echo"<td><input type = submit></td>";
+                    echo"<td><a href=delete.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
+                    echo"</form></tr>";
+                }
+                ?>
 
-        <table>
-            <tr>
-                <th>Customer ID</th>
-                <th>Flavour ID</th>
-                <th>Quantity</th>
-            </tr>
-            <?php
-            while($row = mysqli_fetch_array($update_orders_record))
-            {
-                echo"<tr><form action = update.php method = post>";
-                echo"<td><input type=text name=CustomerID value='" .$row['CustomerID']. "'></td>";
-                echo"<td><input type=text name=FlavourID value='" .$row['FlavourID']. "'></td>";
-                echo"<td><input type=text name=Quantity value='" .$row['Quantity']. "'>";
-                echo"<td><input type=hidden name=OrderID value='" .$row['OrderID']. "'></td>";
-                echo"<td><input type = submit></td>";
-                echo"<td><a href=delete.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
-                echo"</form></tr>";
-            }
-            ?>
-
-        </table>
-        </body>
-        </main>
-    </div>
+            </table>
+            </body>
+        </div>
+    </main>
+</div>
