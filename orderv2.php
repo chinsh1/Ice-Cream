@@ -53,9 +53,9 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
     <div class="grid-item-2">
         <nav>
             <!-- links to other pages -->
-            <a href="index.php">HOME</a>
-            <a href="flavours.php">FLAVOURS</a>
-            <a href="order.php">ORDER</a>
+            <a class="nav-bar" href="index.php">HOME</a>
+            <a class="nav-bar" href="flavours.php">FLAVOURS</a>
+            <a class="nav-bar" href="order.php">ORDER</a>
         </nav>
     </div>
 
@@ -79,6 +79,9 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
                 <!-- enter email address -->
                 <label for="Email">Email: </label><br>
                 <input type="text" id="Email" name="Email"><br>
+                <!-- enter password  -->
+                <label for="Password">Password: </label><br>
+                <input type="text" id="Password" name="Password"><br>
                 <!-- submit button-->
                 <input type="submit" value="submit">
             </form>
@@ -124,7 +127,7 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
                     echo"<td><input type=text name=Quantity value='" .$row['Quantity']. "'>";
                     echo"<td><input type=hidden name=OrderID value='" .$row['OrderID']. "'></td>";
                     echo"<td><input type = submit></td>";
-                    echo"<td><a href=delete.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
+                    echo"<td><a class='delete' href=delete.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
                     echo"</form></tr>";
                 }
                 ?>
@@ -133,4 +136,9 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
             </body>
         </div>
     </main>
+    <div class = "grid-items grid-item-4">
+        <footer>
+            2022 No Scream Ice Cream - Shayla Chin
+        </footer>
+    </div>
 </div>
