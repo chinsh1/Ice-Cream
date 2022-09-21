@@ -29,9 +29,9 @@ $all_flavours_result = mysqli_query($con, $all_flavours_query);
     <div class="grid-item-2">
         <nav>
             <!-- links to other pages -->
-            <a href="index.php">HOME</a>
-            <a href="flavours.php">FLAVOURS</a>
-            <a href="order.php">ORDER</a>
+            <a class="nav-bar" href="index.php">HOME</a>
+            <a class="nav-bar" href="flavours.php">FLAVOURS</a>
+            <a class="nav-bar" href="order.php">ORDER</a>
         </nav>
     </div>
 
@@ -101,7 +101,12 @@ $all_flavours_result = mysqli_query($con, $all_flavours_query);
             }
             ?>
         </div>
-        </main>
-        </body>
-        </html>
+    <div class = "grid-items grid-item-4">
+        <footer>
+            2022 No Scream Ice Cream - Shayla Chin
+        </footer>
+    </div>
+</main>
+</body>
+</html>
 </div>
