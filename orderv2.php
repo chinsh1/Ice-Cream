@@ -136,7 +136,7 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
             </body>
         </div>
     </main>
-    <div class = "grid-items grid-item-4">
+    <div class = "grid-item-10">
         <footer>
             2022 No Scream Ice Cream - Shayla Chin
         </footer>
