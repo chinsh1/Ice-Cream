@@ -25,9 +25,9 @@ include 'connection.php';
     <div class="grid-items grid-item-2">
         <nav>
             <!-- links to other pages -->
-            <a href="index.php">HOME</a>
-            <a href="flavours.php">FLAVOURS</a>
-            <a href="order.php">ORDER</a>
+            <a class="nav-bar" href="index.php">HOME</a>
+            <a class="nav-bar" href="flavours.php">FLAVOURS</a>
+            <a class="nav-bar" href="order.php">ORDER</a>
         </nav>
     </div>
 
