@@ -101,7 +101,7 @@ $all_flavours_result = mysqli_query($con, $all_flavours_query);
             }
             ?>
         </div>
-    <div class = "grid-items grid-item-4">
+    <div class = "grid-item-10">
         <footer>
             2022 No Scream Ice Cream - Shayla Chin
         </footer>
