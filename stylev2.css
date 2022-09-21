@@ -44,20 +44,11 @@ p{
     font-size: 20px;
 }
 
-/* navigation bar */
-a{
-    font-size: 30px;
-    font-family: 'Mandali', sans-serif;
-    color: #CD9D6E;
-    margin-left: 100px;
-    margin-right: 120px;
-}
-
 /* formatting of table */
 table {
     font-family: 'Mandali', sans-serif;
     border: thick solid #A7BED3;
-    border-spacing: 5px;
+    border-spacing: 10px;
 }
 
 /*headers of columns */
@@ -65,7 +56,7 @@ th {
     color: black;
     text-align: center;
     font-family: 'Mandali', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 /*information inside columns*/
@@ -77,22 +68,22 @@ td {
 
 /* table layout */
 .idColumn {
-    width: 200px;
+    width: 250px;
 }
 
 /* table layout */
 .flavourColumn {
-    width: 200px;
+    width: 250px;
 }
 
 /* table layout */
 .costColumn {
-    width: 200px;
+    width: 250px;
 }
 
 /* table layout */
 .stockColumn {
-    width: 200px;
+    width: 250px;
 }
 
 /* grid for home page */
@@ -169,7 +160,18 @@ td {
     margin-left: 120px;
 }
 
-/* */
-.grid-items {
+/* navigation bar */
+.nav-bar {
+    font-size: 30px;
+    font-family: 'Mandali', sans-serif;
+    color: #CD9D6E;
+    margin-left: 100px;
+    margin-right: 120px;
+}
 
+/* delete buttons */
+.delete {
+    font-size: 20px;
+    font-family: 'Mandali', sans-serif;
+    color: #A7BED3;
 }
