@@ -48,6 +48,8 @@ table {
     font-family: 'Mandali', sans-serif;
     border: thick solid #A7BED3;
     border-spacing: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*headers of columns */
@@ -67,22 +69,22 @@ td {
 
 /* table layout */
 .idColumn {
-    width: 250px;
+    width: 200px;
 }
 
 /* table layout */
 .flavourColumn {
-    width: 250px;
+    width: 200px;
 }
 
 /* table layout */
 .costColumn {
-    width: 250px;
+    width: 200px;
 }
 
 /* table layout */
 .stockColumn {
-    width: 250px;
+    width: 200px;
 }
 
 /* grid for home page */
@@ -149,15 +151,19 @@ td {
     text-align: center;
 }
 
+/* search bar placement */
 .grid-item-8 {
     grid-column: 5/6;
     grid-row: 3;
+    margin-left: 30px;
 }
 
+/* flavours table placement  */
 .grid-item-9 {
     grid-column: 2/5;
-    grid-row: 4;
-    margin-left: 120px;
+    grid-row: 3/4;
+    margin-left: 60px;
+    text-align: center;
 }
 
 /* footer on flavours and orders page placement*/
