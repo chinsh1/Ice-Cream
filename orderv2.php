@@ -41,7 +41,7 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<div class="grid-container">
+<div class="grid-container-2">
     <div class="grid-item-1">
         <body>
         <header>
@@ -87,54 +87,54 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
             </form>
     </div>
 
-        <div class="grid-item-6">
-            <h2>Add Order</h2>
-            <form action="insertorder.php" method="post">
+    <div class="grid-item-6">
+        <h2>Add Order</h2>
+        <form action="insertorder.php" method="post">
 
-                <!-- enter customer ID -->
-                <label for="CustomerID">Customer ID: </label><br>
-                <input type="text" id="CustomerID" name="CustomerID"><br>
+            <!-- enter customer ID -->
+            <label for="CustomerID">Customer ID: </label><br>
+            <input type="text" id="CustomerID" name="CustomerID"><br>
 
-                <!-- enter Flavour ID -->
-                <label for="flavour">Flavour: </label><br>
-                <input type="text" id="FlavourID" name="FlavourID"><br>
+            <!-- enter Flavour ID -->
+            <label for="flavour">Flavour: </label><br>
+            <input type="text" id="FlavourID" name="FlavourID"><br>
 
-                <!-- enter quantity  -->
-                <label for="Quantity">Quantity: </label><br>
-                <input type="text" id="Quantity" name="Quantity"><br>
+            <!-- enter quantity  -->
+            <label for="Quantity">Quantity: </label><br>
+            <input type="text" id="Quantity" name="Quantity"><br>
 
-                <!-- submit button-->
-                <input type="submit" value="submit">
+            <!-- submit button-->
+            <input type="submit" value="submit">
 
-            </form>
-        </div>
+        </form>
+    </div>
 
-        <div class="grid-item-7">
-            <h2>Update Order</h2>
+    <div class="grid-item-7">
+        <h2>Update Order</h2>
 
-            <table>
-                <tr>
-                    <th>Customer ID</th>
-                    <th>Flavour ID</th>
-                    <th>Quantity</th>
-                </tr>
-                <?php
-                while($row = mysqli_fetch_array($update_orders_record))
-                {
-                    echo"<tr><form action = update.php method = post>";
-                    echo"<td><input type=text name=CustomerID value='" .$row['CustomerID']. "'></td>";
-                    echo"<td><input type=text name=FlavourID value='" .$row['FlavourID']. "'></td>";
-                    echo"<td><input type=text name=Quantity value='" .$row['Quantity']. "'>";
-                    echo"<td><input type=hidden name=OrderID value='" .$row['OrderID']. "'></td>";
-                    echo"<td><input type = submit></td>";
-                    echo"<td><a class='delete' href=delete.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
-                    echo"</form></tr>";
-                }
-                ?>
+        <table class="order-table">
+            <tr>
+                <th>Customer ID</th>
+                <th>Flavour ID</th>
+                <th>Quantity</th>
+            </tr>
+            <?php
+            while($row = mysqli_fetch_array($update_orders_record))
+            {
+                echo"<tr><form action = update.php method = post>";
+                echo"<td><input type=text name=CustomerID value='" .$row['CustomerID']. "'></td>";
+                echo"<td><input type=text name=FlavourID value='" .$row['FlavourID']. "'></td>";
+                echo"<td><input type=text name=Quantity value='" .$row['Quantity']. "'>";
+                echo"<td><input type=hidden name=OrderID value='" .$row['OrderID']. "'></td>";
+                echo"<td><input type = submit></td>";
+                echo"<td><a class='delete' href=delete.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
+                echo"</form></tr>";
+            }
+            ?>
 
-            </table>
-            </body>
-        </div>
+        </table>
+        </body>
+    </div>
     </main>
     <div class = "grid-item-10">
         <footer>
