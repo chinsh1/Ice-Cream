@@ -30,6 +30,10 @@ AND flavours.FlavourID = orders.FlavourID AND orders.Quantity AND orders.OrderID
 $this_orders_result = mysqli_query($con, $this_orders_query);
 $this_orders_record = mysqli_fetch_assoc($this_orders_result);
 
+/* Specials Query */
+$all_orders_query = "SELECT Name FROM flavours";
+$all_orders_result = mysqli_query($con, $all_orders_query);
+
 ?>
 
 <!DOCTYPE html>
@@ -63,34 +67,33 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
             <a class="nav-bar" href="order.php">ORDER</a>
         </nav>
     </div>
-
+<main>
     <!-- div for add customer  -->
     <div class="grid-item-5">
-        <main>
-            <!-- using a form to insert an entry into the database -->
-            <h2>Add Customer</h2>
-            <form action="insertcustomer.php" method="post">
-                <!-- enter first name -->
-                <label for="FName">First Name: </label><br>
-                <input type="text" id="FName" name="FName"><br>
-                <!-- enter last name -->
-                <label for="LName">Last Name: </label><br>
-                <input type="text" id="LName" name="LName"><br>
-                <!-- enter address -->
-                <label for="Address">Address: </label><br>
-                <input type="text" id="Address" name="Address"><br>
-                <!-- enter phone number -->
-                <label for="Phone">Phone Number: </label><br>
-                <input type="text" id="Phone" name="Phone"><br>
-                <!-- enter email address -->
-                <label for="Email">Email: </label><br>
-                <input type="text" id="Email" name="Email"><br>
-                <!-- enter password  -->
-                <label for="Password">Password: </label><br>
-                <input type="text" id="Password" name="Password"><br>
-                <!-- submit button-->
-                <input type="Submit" value="Submit">
-            </form>
+        <!-- using a form to insert an entry into the database -->
+        <h2>Add Customer</h2>
+        <form action="insertcustomer.php" method="post">
+            <!-- enter first name -->
+            <label for="FName">First Name: </label><br>
+            <input type="text" id="FName" name="FName"><br>
+            <!-- enter last name -->
+            <label for="LName">Last Name: </label><br>
+            <input type="text" id="LName" name="LName"><br>
+            <!-- enter address -->
+            <label for="Address">Address: </label><br>
+            <input type="text" id="Address" name="Address"><br>
+            <!-- enter phone number -->
+            <label for="Phone">Phone Number: </label><br>
+            <input type="text" id="Phone" name="Phone"><br>
+            <!-- enter email address -->
+            <label for="Email">Email: </label><br>
+            <input type="text" id="Email" name="Email"><br>
+            <!-- enter password  -->
+            <label for="Password">Password: </label><br>
+            <input type="text" id="Password" name="Password"><br>
+            <!-- submit button-->
+            <input type="Submit" value="Submit">
+        </form>
     </div>
 
     <!-- div for add order  -->
@@ -117,7 +120,7 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
         </form>
     </div>
 
-    <!-- div for updateing order  -->
+    <!-- div for updating order  -->
     <div class="grid-item-7">
         <h2>Update Order</h2>
 
@@ -134,7 +137,7 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
                 /* user changes the customer ID of order */
                 echo"<td><input type=text name=CustomerID value='" .$row['CustomerID']. "'></td>";
                 /* user changes the flavour ID of order */
-                echo"<td><input type=text name=FlavourID value='" .$row['FlavourID']. "'></td>";
+                echo"<td><input type=text name=Name value='" .$row['Name']. "'></td>";
                 /* user changes the quantity of the order  */
                 echo"<td><input type=text name=Quantity value='" .$row['Quantity']. "'>";
                 echo"<td><input type=hidden name=OrderID value='" .$row['OrderID']. "'></td>";
@@ -144,16 +147,18 @@ $this_orders_record = mysqli_fetch_assoc($this_orders_result);
                 echo"<td><a class='delete' href=delete.php?OrderID=" .$row['OrderID']. ">Delete</a></td>";
                 echo"</form></tr>";
             }
+
             ?>
 
         </table>
         </body>
     </div>
-    </main>
+</main>
     <!-- div for footer  -->
     <div class = "grid-item-10">
         <footer>
-            2022 Ice Cream - Shayla Chin
+            CONTACT US @ <br>
+            No Scream Ice Cream :) | 0220962340 | noscream@yahoo.com
         </footer>
     </div>
 </div>
