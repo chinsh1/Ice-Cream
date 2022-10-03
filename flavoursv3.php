@@ -17,86 +17,92 @@ $all_flavours_result = mysqli_query($con, $all_flavours_query);
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<body>
+    <!-- grid for order and flavours page  -->
+    <div class="grid-container-2">
+        <div class="grid-item-1">
+            <header>
+                <!-- link to home page -->
+                <?php
+                echo "<a class = 'title' href='index.php'>";
+                ?>
+                <!-- title of page -->
+                <h1> Ice Cream </h1>
+            </header>
+        </div>
 
-<!-- grid for order and flavours page  -->
-{
-<div class="grid-container-2">
-    <div class="grid-item-1">
-        <header>
+        <!-- div for nav bar -->
+        <div class="grid-item-2">
+            <nav>
+                <!-- links to other pages -->
+                <a class="nav-bar" href="index.php">HOME</a>
+                <a class="nav-bar" href="flavours.php">FLAVOURS</a>
+                <a class="nav-bar" href="order.php">ORDER</a>
+            </nav>
+        </div>
+
+        <div class="grid-items grid-item-8">
+            <!-- search bar for all food -->
+            <h2>Search a Item</h2>
+            <form action="flavours.php" method="post">
+                <input type="text" name='search'>
+                <input type="submit" name="submit" value="go!">
+            </form>
+            <!-- php for search bar -->
             <?php
-            echo "<a class = 'title' href='index.php'>";
-            ?>
-            <!-- title of page -->
-            <h1> Ice Cream </h1>
-        </header>
-    </div>
-
-    <div class="grid-item-2">
-        <nav>
-            <!-- links to other pages -->
-            <a class="nav-bar" href="index.php">HOME</a>
-            <a class="nav-bar" href="flavours.php">FLAVOURS</a>
-            <a class="nav-bar" href="order.php">ORDER</a>
-        </nav>
-    </div>
-<main>
-    <div class="grid-item-8">
-        <!-- search bar for all food -->
-        <h2>Search a Item</h2>
-        <form action="flavours.php" method="post">
-            <input type="text" name='search'>
-            <input type="submit" name="submit" value="go!">
-        </form>
-        <!-- php for search bar -->
-        <?php
-        if (isset($_POST['search'])) {
-            $search = $_POST['search'];
-            // query to find item that is searched from database
-            $query1 = "SELECT * FROM flavours WHERE Name LIKE '%$search%'";
-            $query = mysqli_query($con, $query1);
-            $count = mysqli_num_rows($query);
-            //if input is invalid it will print this message
-            if ($count == 0) {
-                echo "<p> There was no search results!";
-            } else {
-                while ($row = mysqli_fetch_array($query)) {
-                    echo "<br>";
-                    echo $row ['Name'];
+            if (isset($_POST['search'])) {
+                $search = $_POST['search'];
+                // query to find item that is searched from database
+                $query1 = "SELECT * FROM flavours WHERE Name LIKE '%$search%'";
+                $query = mysqli_query($con, $query1);
+                $count = mysqli_num_rows($query);
+                //if input is invalid it will print this message
+                if ($count == 0) {
+                    echo "<p> There was no search results!";
+                } else {
+                    //if input is valid it will print the flavours that relate to the search
+                    while ($row = mysqli_fetch_array($query)) {
+                        echo "<br>";
+                        echo $row ['Name'];
+                    }
                 }
             }
-        }
-        ?>
-    </div>
-
-    <div class="grid-item-9">
-        <h2>Ice Cream Information</h2>
-        <table>
-            <tr>
-                <th>Flavour ID</th>
-                <th>Flavour Name</th>
-                <th>Cost</th>
-                <th>Stock</th>
-            </tr>
-            <?php
-            while($row = mysqli_fetch_array($all_flavours_result))
-            {
-                echo"<tr>";
-                echo"<td class='idColumn'> " .$row['FlavourID']. "</td>";
-                echo"<td class='flavourColumn'>" .$row['Name']. "</td>";
-                echo"<td class='costColumn'>" .$row['Cost']. "</td>";
-                echo"<td class='stockColumn'>" .$row['Stock']. "</td>";
-                echo"</tr>";
-            }
             ?>
+        </div>
 
-        </table>
-    </div>
-</main>
+        <!-- div for ice cream flavours table -->
+        <div class="grid-items grid-item-9">
+            <h2>Ice Cream Information</h2>
+            <table>
+                <tr>
+                    <th>Flavour ID</th>
+                    <th>Flavour Name</th>
+                    <th>Cost</th>
+                    <th>Stock</th>
+                </tr>
+                <?php
+                while($row = mysqli_fetch_array($all_flavours_result))
+                {
+                    //table that displays all the ice cream flavours
+                    echo"<tr>";
+                    echo"<td class='idColumn'> " .$row['FlavourID']. "</td>";
+                    echo"<td class='flavourColumn'>" .$row['Name']. "</td>";
+                    echo"<td class='costColumn'>" .$row['Cost']. "</td>";
+                    echo"<td class='stockColumn'>" .$row['Stock']. "</td>";
+                    echo"</tr>";
+                }
+                ?>
+
+            </table>
+        </div>
+
+        <!-- footer div -->
+        <div class = "grid-item-10">
+            <footer>
+                CONTACT US @ <br>
+                No Scream Ice Cream :) | 0220962340 | noscream@yahoo.com
+            </footer>
+        </div>
 </div>
-    <div class = "grid-item-10">
-        <footer>
-            CONTACT US @ <br>
-            No Scream Ice Cream :) | 0220962340 | noscream@yahoo.com
-        </footer>
-    </div>
-    </html>
+</body>
+</html>
