@@ -21,6 +21,7 @@ $all_flavours_result = mysqli_query($con, $all_flavours_query);
     <div class="grid-container">
         <div class="grid-item-1">
             <header>
+                <!-- link to home page -->
                 <?php
                 echo "<a class = 'title' href='index.php'>";
                 ?>
@@ -55,6 +56,7 @@ $all_flavours_result = mysqli_query($con, $all_flavours_query);
             <b>Sunday</b> - 12:00pm - 12:00am <br>
         </div>
 
+        <!-- div for image of ice cream truck -->
         <div class = "grid-items grid-item-11">
             <?php
             echo "<img src='https://live.staticflickr.com/7134/7560180616_c1a580bcff_b.jpg' width='771px' height='571px' alt='Ice Cream Truck'/>";
