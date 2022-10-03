@@ -1,0 +1,225 @@
+/* fonts imported from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Mandali&family=Sniglet&display=swap');
+
+/* main headings */
+h1 {
+    font-size: 75px;
+    font-family: 'Coiny', cursive;
+    text-align: center;
+    color: #CD9D6E;
+}
+
+/* main body*/
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #FFE4D6;
+}
+
+/* header colour */
+header{
+    background-color: #F1FFC4;
+}
+
+/* footer */
+footer{
+    background-color: #F1FFC4;
+    margin-left: 20px;
+    font-family: 'Mandali', sans-serif;
+    font-size: 20px;
+    text-align: left;
+}
+
+/* h2 headings */
+h2 {
+    font-family: 'Coiny', cursive;
+    font-size: 30px;
+}
+
+/* paragraphs/text */
+p{
+    font-family: 'Mandali', sans-serif;
+    text-align: justify;
+    font-size: 20px;
+}
+
+/* formatting of table */
+table {
+    font-family: 'Mandali', sans-serif;
+    border: thick solid #A7BED3;
+    border-spacing: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*headers of columns */
+th {
+    color: black;
+    text-align: center;
+    font-family: 'Mandali', sans-serif;
+    font-size: 25px;
+}
+
+/*information inside columns*/
+td {
+    font-family: 'Mandali', sans-serif;
+    color: black;
+    text-align: center;
+}
+
+/* table layout */
+.idColumn {
+    width: 200px;
+}
+
+/* table layout */
+.flavourColumn {
+    width: 200px;
+}
+
+/* table layout */
+.costColumn {
+    width: 200px;
+}
+
+/* table layout */
+.stockColumn {
+    width: 200px;
+}
+
+/* grid for home page */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 25% 7% 58% 10%;
+    height: 1000px;
+}
+
+/* grid for flavours page*/
+.grid-container-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 20% 7% 27% 36% 10%;
+    height: 1000px;
+}
+
+/* heading placement*/
+.grid-item-1 {
+    grid-column: 1/6;
+    grid-row: 1;
+}
+
+/* nav bar placement */
+.grid-item-2 {
+    grid-column: 2/5;
+    grid-row: 2;
+    text-align: center;
+}
+
+/* text on home page placement */
+.grid-item-3 {
+    grid-column: 3/6;
+    grid-row: 3;
+    margin-right: 40px ;
+    margin-left: 180px;
+}
+
+/* footer on home page placement*/
+.grid-item-4 {
+    padding-top: 50px;
+    grid-column: 1/6;
+    grid-row: 4;
+    background-color: #F1FFC4;
+}
+
+/* add customer placement */
+.grid-item-5 {
+    grid-column: 1/3;
+    grid-row: 3;
+    text-align: center;
+}
+
+/* add order placement */
+.grid-item-6 {
+    grid-column: 4/6;
+    grid-row: 3;
+    text-align: center;
+}
+
+/* update order placement */
+.grid-item-7 {
+    grid-column: 2/5;
+    grid-row: 3/4;
+    text-align: center;
+}
+
+/* search bar placement */
+.grid-item-8 {
+    grid-column: 5/6;
+    grid-row: 3;
+    margin-left: 30px;
+}
+
+/* flavours table placement  */
+.grid-item-9 {
+    grid-column: 2/5;
+    grid-row: 3/4;
+    margin-left: 60px;
+    text-align: center;
+}
+
+/* footer on flavours and orders page placement*/
+.grid-item-10 {
+    padding-top: 30px;
+    grid-column: 1/6;
+    grid-row: 5;
+    background-color: #F1FFC4;
+
+}
+
+/* img on home page placement */
+.grid-item-11 {
+    grid-column: 1/4;
+    grid-row: 3;
+    margin-right: 180px ;
+    margin-left: 40px;
+}
+
+.title {
+    text-decoration: none;
+}
+
+/* navigation bar */
+.nav-bar {
+    font-size: 30px;
+    font-family: 'Mandali', sans-serif;
+    color: #CD9D6E;
+    margin-left: 100px;
+    margin-right: 120px;
+}
+
+/* navigation bar and delete button hover */
+a:hover {
+    color: #895C2F;
+}
+
+/* delete buttons */
+.delete {
+    font-size: 20px;
+    font-family: 'Mandali', sans-serif;
+    color: #A7BED3;
+}
+
+/* form font */
+form {
+    color: #527CA3;
+    font-family: 'Mandali', sans-serif;
+    font-size: 15px;
+}
+
+/* input font */
+input {
+    font-family: 'Mandali', sans-serif;
+    font-size: 15px;
+}
