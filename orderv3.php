@@ -75,9 +75,6 @@ $update_orders_record = mysqli_query($con, $update_orders);
                 <!-- enter email address -->
                 <label for="Email">Email: </label><br>
                 <input type="text" id="Email" name="Email"><br>
-                <!-- enter password  -->
-                <label for="Password">Password: </label><br>
-                <input type="text" id="Password" name="Password"><br>
                 <!-- submit button-->
                 <input type="Submit" value="Submit">
             </form>
