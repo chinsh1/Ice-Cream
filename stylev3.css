@@ -98,7 +98,7 @@ td {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 20% 7% 63% 10%;
+    grid-template-rows: 17% 10% 63% 10%;
     height: 1000px;
 }
 
@@ -106,7 +106,7 @@ td {
 .grid-container-2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 20% 7% 27% 36% 10%;
+    grid-template-rows: 15% 7% 32% 36% 10%;
     height: auto;
 }
 
@@ -197,6 +197,15 @@ td {
     margin-bottom: auto;
 }
 
+/* customer info placement */
+.grid-item-12 {
+    grid-column: 2/5;
+    grid-row: 4;
+    text-align: center;
+    margin-top: auto;
+    font-family: 'Mandali', sans-serif;
+}
+
 /* title button to go back to home page*/
 .title {
     text-decoration: none;
@@ -230,6 +239,12 @@ form {
     font-size: 15px;
 }
 
+p {
+    color: #895C2F;
+    font-family: 'Mandali', sans-serif;
+    font-size: 15px;
+}
+
 /* input font */
 input {
     font-family: 'Mandali', sans-serif;
@@ -240,4 +255,9 @@ input {
 img{
     width: 100%;
     height: 100%;
+}
+
+/* customers info table  */
+.customer {
+    font-size: 15px;
 }
