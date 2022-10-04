@@ -21,6 +21,11 @@ $this_order_record = mysqli_fetch_assoc($this_order_result);
 /* Update orders query */
 $update_orders = "SELECT * FROM orders";
 $update_orders_record = mysqli_query($con, $update_orders);
+
+/* Customers Query */
+/* Select CustomerID, FName, Email FROM customers */
+$all_customers_query = 'SELECT CustomerID, FName, Email FROM customers';
+$all_customers_result = mysqli_query($con, $all_customers_query);
 ?>
 
 <!DOCTYPE html>
@@ -85,22 +90,16 @@ $update_orders_record = mysqli_query($con, $update_orders);
             <h2>Add Order</h2>
             <!-- allows user to add a new order  -->
             <form action="insertorder.php" method="post">
-
-                <!-- enter customer ID -->
+                <!-- enter first name -->
                 <label for="CustomerID">Customer ID: </label><br>
                 <input type="text" id="CustomerID" name="CustomerID"><br>
-
-                <!-- enter Flavour ID -->
-                <label for="flavour">Flavour: </label><br>
+                <!-- enter last name -->
+                <label for="FlavourID">Flavour ID: </label><br>
                 <input type="text" id="FlavourID" name="FlavourID"><br>
-
-                <!-- enter quantity  -->
+                <!-- enter address -->
                 <label for="Quantity">Quantity: </label><br>
                 <input type="text" id="Quantity" name="Quantity"><br>
-
-                <!-- submit button-->
                 <input type="Submit" value="Submit">
-
             </form>
         </div>
 
@@ -137,6 +136,31 @@ $update_orders_record = mysqli_query($con, $update_orders);
 
             </table>
         </div>
+
+        <div class="grid-item-12">
+            <!-- Customers Information -->
+            <h2>Customer Information</h2>
+            <table>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>First Name</th>
+                    <th>Email</th>
+                </tr>
+                <?php
+                while($row = mysqli_fetch_array($all_customers_result))
+                {
+                    //table that displays some customer Information
+                    echo"<tr>";
+                    echo"<td class='customer'> " .$row['CustomerID']. "</td>";
+                    echo"<td class='customer'>" .$row['FName']. "</td>";
+                    echo"<td class='customer'>" .$row['Email']. "</td>";
+                    echo"</tr>";
+                }
+                ?>
+
+            </table>
+        </div>
+
             <!-- div for footer  -->
             <div class = "grid-item-10">
                 <footer>
