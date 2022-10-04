@@ -3,8 +3,6 @@ $con = mysqli_connect("localhost", "chinsh", "swiftbrain55", "chinsh_icecream");
 include 'connection.php';
 //link to connection page
 
-$all_flavours_query = 'SELECT FlavourID, Name, Cost, Stock FROM flavours';
-$all_flavours_result = mysqli_query($con, $all_flavours_query);
 ?>
 
 <!DOCTYPE html>
